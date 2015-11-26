@@ -7,4 +7,5 @@ These are pages containing additional information for running Arch Linux ARM on 
     * Samsung
         * [[ODROID-C1]]
         * [[ODROID-U2]]
+        * [[ODROID-U3]]
         * [[Samsung Chromebook]]

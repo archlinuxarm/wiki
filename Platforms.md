@@ -2,8 +2,9 @@ These are pages containing additional information for running Arch Linux ARM on 
 
 * ARMv7
     * Rockchip
-        * [[Hisense Chromebook C11]]
+        * [[Asus Chromebit CS10]]
         * [[Asus Chromebook Flip C100P]]
+        * [[Hisense Chromebook C11]]
     * Samsung
         * [[ODROID-C1]]
         * [[ODROID-U2]]

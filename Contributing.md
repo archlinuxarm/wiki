@@ -7,6 +7,7 @@ This wiki is available [on GitHub](https://github.com/archlinuxarm/wiki). To con
 
 * [Creating a pull request](https://help.github.com/articles/creating-a-pull-request/)
 * [Working with forks](https://help.github.com/articles/working-with-forks/)
+* [Changing a commit message](https://help.github.com/articles/changing-a-commit-message/)
 
 Rules for pull requests:
 

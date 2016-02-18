@@ -13,10 +13,10 @@ In lieu of building the toolchain as detailed below, if you are running a 64-bit
 
 It is *highly recommended* to use these tarballs as they have been thoroughly tested, and are maintained to be version- and source-matched to the current toolchain components for our ARM architectures.  If you build the toolchain yourself, you must assemble patched source tarballs to build versions that match what is in use here.
 
-* [ARMv5te soft](/builder/xtools/x-tools.tar.xz) (c5e18a5a4f7162d6609ce8e550052feb)
-* [ARMv6l hard](/builder/xtools/x-tools6h.tar.xz) (1835bc76e909c77258a36b414ed3ff86)
-* [ARMv7l hard](/builder/xtools/x-tools7h.tar.xz) (8d61c218fd68b454883d8cd01216eb82)
-* [ARMv8](/builder/xtools/x-tools8.tar.xz) (75e7f6d60626727ac01409638516c569)
+* [ARMv5te soft](/builder/xtools/x-tools.tar.xz) (8463ba05d3b2b740a7faffd64bc336a4)
+* [ARMv6l hard](/builder/xtools/x-tools6h.tar.xz) (77f235aba187a7026e2523f7a61a8e9e)
+* [ARMv7l hard](/builder/xtools/x-tools7h.tar.xz) (ebc832213819404d497509949227ba79)
+* [ARMv8](/builder/xtools/x-tools8.tar.xz) (78d4e85721bffb892f8d0a5345082c32)
 
 If you want to save yourself time and configuration, see [WarheadsSE's distccd-alarm](https://github.com/WarheadsSE/PKGs/tree/master/distccd-alarm) package. This will generate 3 packages (one for each architecture), and contains configuration and systemd service units for each. It is for x86_64 only, like these toolchain tarballs.
 

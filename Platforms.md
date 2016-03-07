@@ -11,3 +11,7 @@ These are pages containing additional information for running Arch Linux ARM on 
         * [[ODROID-U2]]
         * [[ODROID-U3]]
         * [[Samsung Chromebook]]
+
+* ARMv8
+    * Amlogic
+        * [[ODROID-C2]]

@@ -18,7 +18,7 @@ It is *highly recommended* to use these tarballs as they have been thoroughly te
 * [ARMv7l hard](/builder/xtools/x-tools7h.tar.xz) (58766cfb988135f761d9f4c2c0d5c4e4)
 * [ARMv8](/builder/xtools/x-tools8.tar.xz) (87e0796ac697c9dceb3e83a51b51113c)
 
-If you want to save yourself time and configuration, see [WarheadsSE's distccd-alarm](https://github.com/WarheadsSE/PKGs/tree/master/distccd-alarm) package. This will generate 3 packages (one for each architecture), and contains configuration and systemd service units for each. It is for x86_64 only, like these toolchain tarballs.
+If you want to save yourself time and configuration, see [WarheadsSE's distccd-alarm](https://github.com/WarheadsSE/PKGs/tree/master/distccd-alarm) package. This will generate 4 packages (one for each architecture), and contains configuration and systemd service units for each. It is for x86_64 only, like these toolchain tarballs.
 
 ## Install crosstool-ng
 This process is very automated, courtesy of [crosstool-ng](http://crosstool-ng.org). As a normal user (<b>not root!</b>), clone revision e1d494a of the git repository into a directory called "cross" in your home directory. Enter the source directory and configure with a prefix for the "cross" directory, make, and make install.  If you are missing any pre-requisites, the configure script will let you know what they are.

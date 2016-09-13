@@ -13,7 +13,7 @@ For the purposes of this example, all of the hosts are in the local network of 1
 
 Additionally, this example assumes that you are starting compiles from one specific device (master), which is sending out to the other device(s) (client).  If you want to compile from any device, simply apply the client configuration to the master device, and the master device configuration to the client device(s).
 
-If you want to use the master device to compile as well, apply the client configuration to it.
+If you want to use the master device to compile as well, apply the client configuration to it. It is only suggest to use the master if all slaves are the same architecture as the master (ARM).
 
 ## Configuration: Master Device
 This is what you run on the ARM device you'll be running "makepkg" from and using to coordinate builds.

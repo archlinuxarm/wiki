@@ -14,3 +14,5 @@ These are pages containing additional information for running Arch Linux ARM on 
 * ARMv8
     * Amlogic
         * [[ODROID-C2]]
+    * Mediatek
+        * [[Acer Chromebook R13]]

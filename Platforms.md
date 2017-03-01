@@ -8,6 +8,8 @@ These are pages containing additional information for running Arch Linux ARM on 
         * [[ODROID-C1]]
     * Broadcom
         * [[Raspberry Pi 2]]
+    * Freescale
+        * [[USB Armory]]
     * Rockchip
         * [[Asus Chromebit CS10]]
         * [[Asus Chromebook Flip C100P]]

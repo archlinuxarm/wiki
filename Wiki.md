@@ -5,4 +5,4 @@ Categories:
 * [[Developers]] - Resources for building packages on Arch Linux ARM.
 * [[Platforms]] - Additional information on supported platforms
 
-To contibute to this wiki, see the [[Contributing]] page.
+To contribute to this wiki, see the [[Contributing]] page. Content is available under the [GNU Free Documentation License 1.3 or later](http://www.gnu.org/copyleft/fdl.html) unless otherwise noted.  

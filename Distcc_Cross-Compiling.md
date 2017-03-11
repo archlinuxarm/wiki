@@ -13,22 +13,22 @@ In lieu of building the toolchain as detailed below, if you are running a 64-bit
 
 It is *highly recommended* to use these tarballs as they have been thoroughly tested, and are maintained to be version- and source-matched to the current toolchain components for our ARM architectures.  If you build the toolchain yourself, you must assemble patched source tarballs to build versions that match what is in use here.
 
-* [ARMv5te soft](/builder/xtools/x-tools.tar.xz) (a3a3f6f2866a06687e83677a74a9e75d)
-* [ARMv6l hard](/builder/xtools/x-tools6h.tar.xz) (1e3725360bc5600cb37e7cfdf88bc9e8)
-* [ARMv7l hard](/builder/xtools/x-tools7h.tar.xz) (988ca5511f6ae080b8973ae7a42ded56)
-* [ARMv8](/builder/xtools/x-tools8.tar.xz) (c459576a7145c421a1e9b5cfbbbbfd9a)
+* [ARMv5te soft](/builder/xtools/x-tools.tar.xz) (417c57eebef635aa6555476087d79a64)
+* [ARMv6l hard](/builder/xtools/x-tools6h.tar.xz) (a8067a77c0e3bb033907bbf4a201ab9c)
+* [ARMv7l hard](/builder/xtools/x-tools7h.tar.xz) (7352d0d59c8142e882abebd7e61fc13e)
+* [ARMv8](/builder/xtools/x-tools8.tar.xz) (81a2702bc8d6e98ce1f1d7462bafd7bc)
 
 If you want to save yourself time and configuration, see [WarheadsSE's distccd-alarm](https://github.com/WarheadsSE/PKGs/tree/master/distccd-alarm) package. This will generate 3 packages (one for each architecture), and contains configuration and systemd service units for each. It is for x86_64 only, like these toolchain tarballs.
 
 ## Install crosstool-ng
-This process is very automated, courtesy of [crosstool-ng](http://crosstool-ng.org). As a normal user (<b>not root!</b>), clone revision eff79ab of the git repository into a directory called "cross" in your home directory. Enter the source directory and configure with a prefix for the "cross" directory, make, and make install.  If you are missing any pre-requisites, the configure script will let you know what they are.
+This process is very automated, courtesy of [crosstool-ng](http://crosstool-ng.org). As a normal user (<b>not root!</b>), clone revision eb8c902 of the git repository into a directory called "cross" in your home directory. Enter the source directory and configure with a prefix for the "cross" directory, make, and make install.  If you are missing any pre-requisites, the configure script will let you know what they are.
 
 ```
 mkdir -p cross/src
 cd cross
 git clone https://github.com/crosstool-ng/crosstool-ng.git
 cd crosstool-ng
-git checkout eff79ab
+git checkout eb8c902
 ./bootstrap
 ./configure --prefix=/home/your_user/cross
 make

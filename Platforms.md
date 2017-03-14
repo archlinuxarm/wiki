@@ -25,3 +25,5 @@ These are pages containing additional information for running Arch Linux ARM on 
         * [[Raspberry Pi 3]]
     * Mediatek
         * [[Acer Chromebook R13]]
+    * Rockchip
+        * [[Samsung Chromebook Plus]]

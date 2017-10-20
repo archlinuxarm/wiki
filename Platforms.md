@@ -26,4 +26,5 @@ These are pages containing additional information for running Arch Linux ARM on 
     * Mediatek
         * [[Acer Chromebook R13]]
     * Rockchip
+        * [[Asus Chromebook Flip C101PA]]
         * [[Samsung Chromebook Plus]]

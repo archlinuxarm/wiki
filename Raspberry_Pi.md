@@ -217,6 +217,10 @@ Check `dmesg` for a new entry:
     
 Finally, read the sensor output:
     sensors
+    
+### 1-WIRE
+To enable the 1-wire interface add this line to `/boot/config.txt` and reboot.
+`dtoverlay=w1-gpio`
 
 ## See Also
 

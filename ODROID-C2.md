@@ -35,3 +35,12 @@ To create a persistent configuration, edit or create
 
     w /sys/class/leds/blue:heartbeat/trigger - - - - TRIGGER
 
+## Installation hints
+You will need a =>3.3.x version of bsdtar, Arch linux works.
+
+If the eMMC does not show up as /dev/sdX, but /dev/mmcblk0, the last two
+installation steps may fail silently or with write errors.
+
+Booting of a Live USB/CD may result in write failure to the eMMC, use a USB drive
+with a persistent filesystem instead.
+

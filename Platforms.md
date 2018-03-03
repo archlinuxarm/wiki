@@ -18,6 +18,11 @@ These are pages containing additional information for running Arch Linux ARM on 
         * [[ODROID-U2]]
         * [[ODROID-U3]]
         * [[Samsung Chromebook]]
+    * TI
+        * [[BeagleBone Black]]
+        * [[BeagleBone Black Wireless]]
+        * [[BeagleBone Green]]
+        * [[BeagleBone Green Wireless]]
 * ARMv8
     * Amlogic
         * [[ODROID-C2]]

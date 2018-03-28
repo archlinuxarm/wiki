@@ -6,7 +6,7 @@ This is the official cross-compiling method used at Arch Linux ARM. If you plan 
 This guide makes use of distcc in order to not have to build a full ARM development environment on x86. As the distcc project website states, "distcc does not require all machines to share a filesystem, have synchronized clocks, or to have the same libraries or header files installed." This is particularly advantageous to us since all that is needed is a working cross-compiler for ARM on a faster machine, while controlling the build from an ARM computer that has all of the current libraries and headers.
 
 ## Distcc
-Before beginning, a distcc environment needs to be set up. Follow the [[Distributed Compiling]] guide to establish a master device. The x86 machines will be known as the clients.
+Before beginning, a distcc environment needs to be set up. Follow the [[Distributed Compiling]] guide to establish a master system. The x86 machines will be known as the clients.
 
 ## Pre-built crosstool-ng toolchains
 In lieu of building the toolchain as detailed below, if you are running a 64-bit Linux installation you can use these packaged toolchains that are employed in the official build system.
@@ -18,9 +18,7 @@ It is *highly recommended* to use these tarballs as they have been thoroughly te
 * [ARMv7l hard](/builder/xtools/x-tools7h.tar.xz) (4a934847291fc7469c3ef26e4ada0ba0)
 * [ARMv8](/builder/xtools/x-tools8.tar.xz) (6af0035de121c0b962a78bb0cb45ff71)
 
-If you want to save yourself time and configuration, see [WarheadsSE's distccd-alarm](https://github.com/WarheadsSE/PKGs/tree/master/distccd-alarm) package. This will generate 3 packages (one for each architecture), and contains configuration and systemd service units for each. It is for x86_64 only, like these toolchain tarballs.
-
-## Install crosstool-ng
+## Building a crosstool-ng toolchain
 This process is very automated, courtesy of [crosstool-ng](http://crosstool-ng.org). As a normal user (<b>not root!</b>), clone revision 1dbb06f of the git repository into a directory called "cross" in your home directory. Enter the source directory and configure with a prefix for the "cross" directory, make, and make install.  If you are missing any pre-requisites, the configure script will let you know what they are.
 
 ```
@@ -76,19 +74,10 @@ for file in `ls`; do
 done
 ```
 
-Now the "bin" directory contains links with names that distcc will play nice with. To get distcc to use these binaries instead of the default system ones, we need to place this directory into the path for the distcc daemon:
-
-* Debian/Ubuntu: Edit "/etc/init.d/distcc"
-* Arch Linux: Edit "/etc/conf.d/distccd"
-
-After the initial header block, add this line or modify PATH if it already exists in the file.  Note that we are placing our binary directory at the very front.  After making the change, restart the distccd daemon.
-
-```
-PATH=/home/your_user/x-tools[6h|7h|8]/arm-unknown-linux-gnueabi[hf]/bin:$PATH
-```
+Now the "bin" directory contains links with names that distcc will play nice with.
 
 ## Compile!
-Back on ARM "master" device, make sure that distcc has been enabled in makepkg.conf per the [[Distributed Compiling]] guide, and specify the cross-compiler computer's IP address in the DISTCC_HOSTS variable. Now all builds using makepkg will make use of the distcc and cross compiler setup.
+Back on ARM master device, make sure that distcc has been enabled in makepkg.conf per the [[Distributed Compiling]] guide.  Now all builds using makepkg will make use of the distcc and cross compiler setup.
 
 ## Crap, it's not working
 If you've followed this guide to the letter and you know you've done everything right, the likely problem is that the user distccd is running as does not have permission to access the location of the crosstool-ng binaries.  Either change distccd's user or relocate the x-tools directory to somewhere it can read it, then be sure the PATH set above reflects the new location.

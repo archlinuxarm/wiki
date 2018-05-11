@@ -82,7 +82,7 @@ After=network.target
 [Service]
 User=myuser
 EnvironmentFile=/etc/conf.d/distccd
-Environment="PATH=/home/myuser/x-tools8/aarch64-unknown-linux-gnueabi/bin:/usr/bin"
+Environment="PATH=/home/myuser/x-tools8/aarch64-unknown-linux-gnu/bin:/usr/bin"
 ExecStart=/usr/bin/distccd --no-detach --daemon $DISTCC_ARGS --log-file=/var/log/distccd8.log --port 3932 --stats-port 3933
 
 [Install]

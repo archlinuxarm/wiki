@@ -13,20 +13,20 @@ In lieu of building the toolchain as detailed below, if you are running a 64-bit
 
 It is *highly recommended* to use these tarballs as they have been thoroughly tested, and are maintained to be version- and source-matched to the current toolchain components for our ARM architectures.  If you build the toolchain yourself, you must assemble patched source tarballs to build versions that match what is in use here.
 
-* [ARMv5te soft-float](/builder/xtools/x-tools.tar.xz) (4a53a800a10241734ba1abdda981a35d)
-* [ARMv6l hard-float](/builder/xtools/x-tools6h.tar.xz) (a6ae48eafce2894739277b3fa2be714d)
-* [ARMv7l hard-float](/builder/xtools/x-tools7h.tar.xz) (397c46ec3f34512f553fa45e92459509)
-* [ARMv8](/builder/xtools/x-tools8.tar.xz) (16e951eef3612244e8b1438e2fc9b69e)
+* [ARMv5te soft-float](/builder/xtools/x-tools.tar.xz) (5eae6dcdc3b6f3742d3ecd33ab4dcf69)
+* [ARMv6l hard-float](/builder/xtools/x-tools6h.tar.xz) (2f120a46e85fc434225d3b13007bba16)
+* [ARMv7l hard-float](/builder/xtools/x-tools7h.tar.xz) (fb55dc6fbf522ab3aae3f9e3db31f95a)
+* [ARMv8](/builder/xtools/x-tools8.tar.xz) (919a89e12010dfb81c0a0a1266d250d8)
 
 ## Building a crosstool-ng toolchain
-This process is very automated, courtesy of [crosstool-ng](http://crosstool-ng.org). As a normal user (<b>not root!</b>), clone revision 7d3d4d9e of the git repository into a directory called "cross" in your home directory. Enter the source directory and configure with a prefix for the "cross" directory, make, and make install.  If you are missing any pre-requisites, the configure script will let you know what they are.
+This process is very automated, courtesy of [crosstool-ng](http://crosstool-ng.org). As a normal user (<b>not root!</b>), clone revision ec384f2b of the git repository into a directory called "cross" in your home directory. Enter the source directory and configure with a prefix for the "cross" directory, make, and make install.  If you are missing any pre-requisites, the configure script will let you know what they are.
 
 ```
 mkdir -p cross/src
 cd cross
 git clone https://github.com/crosstool-ng/crosstool-ng.git
 cd crosstool-ng
-git checkout 7d3d4d9e
+git checkout ec384f2b
 ./bootstrap
 ./configure --prefix=/home/your_user/cross
 make

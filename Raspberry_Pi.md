@@ -17,6 +17,29 @@ If you experience distortion using the 3.5mm analogue output:
 
     audio_pwm_mode=2
 
+## Bluetooth
+
+### firmware
+To be able to talk to the bluetooth chip, you must install the services, firmware, and UDEV rules. 
+The [pi-bluetooth package](https://aur.archlinux.org/packages/pi-bluetooth/)
+from the AUR is available to do this. 
+
+### wifi-coexistence 
+
+The BCM43* series chips are notorious for problems when both wifi and bluetooth are used at the same time. This coexistence issue comes in varying degrees of severity but for most users makes using the Pi in bluetooth A2DP mode while also using wifi impossible. Bluetooth buffer underruns are  caused by sharing the UART device, resulting in skipping, popping, hissing, and generally unusable audio. For some users, this also effects peripherals such as mice and keyboards. A firmware fix was found for both the Pi3 and Pi ZeroW, discussion of this fix can be found [in this github issue](https://github.com/raspberrypi/linux/issues/1402). 
+
+To deploy the fix to the current firmware in Arch add the following lines:
+btc_mode=1
+btc_params8=0x4e20
+btc_params1=0x7530
+
+to the end of these firmware config files:
+
+`/usr/lib/firmware/updates/brcm/brcmfmac43430-sdio.txt`
+`/usr/lib/firmware/updates/brcm/brcmfmac43455-sdio.txt`
+
+This fix can be found in [this git commit](https://github.com/piCorePlayer/firmware-rpi-wireless/commit/7d926a074484e1b43974273a0cdeed9cf3daff9c). The fix is experimental and is not yet deployed to the [upstream package](https://github.com/raspberrypi/firmware)
+
 ## Video
 The X.org driver for Raspberry Pi can be installed with the `xf86-video-fbdev` 
 or `xf86-video-fbturbo-git` package.

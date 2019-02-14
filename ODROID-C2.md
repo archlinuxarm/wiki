@@ -5,7 +5,7 @@
 * X11 Mali EGL and GLES drivers (installed with xf86-video-odroid-c2): odroid-c2-libgl-x11
     * Note: Reboot after installation for udev rules to take effect.
 * Framebuffer Mali EGL and GLES drivers: odroid-c2-libgl-fb
-* wiringPi modified for the ODROID-C2: wiringc1
+* wiringPi modified for the ODROID-C2: wiring-odroid
 
 ## Headless Mode
 For servers (ie, no need for a display), uncomment the following in

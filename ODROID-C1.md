@@ -3,7 +3,7 @@
 * X.org video driver package: xf86-video-odroid-c1
   Note: Add your user to the "video" group to be able to access /dev/mali and /dev/ump.
 * Mali EGL and GLES drivers (installed with xf86-video-odroid-c1): odroid-c1-libgl
-* wiringPi modified for the ODROID-C1: wiringc1
+* wiringPi modified for the ODROID-C1: wiring-odroid
 * Kodi: kodi-c1
 
 ## IR

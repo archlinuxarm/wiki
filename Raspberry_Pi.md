@@ -249,6 +249,16 @@ Finally, read the sensor output:
 To enable the 1-wire interface add this line to `/boot/config.txt` and reboot.
 `dtoverlay=w1-gpio`
 
+### Non-Root GPIO
+
+To use the GPIO/SPI pins as a regular non-root user (in group `tty`), add the following lines to a new file `/usr/lib/udev/rules.d/99-spi-permissions.rules`
+
+    KERNEL=="spidev*", GROUP="tty", MODE="0660"
+    SUBSYSTEM=="gpio*", PROGRAM="/bin/sh -c 'chown -R root:tty /sys/class/gpio && chmod -R 775 /sys/class/gpio; chown -R root:tty /sys/devices/virtual/gpio && chmod -R 775 /sys/devices/virtual/gpio; chown -R root:tty /sys/devices/platform/soc/*.gpio/gpio && chmod -R 775 /sys/devices/platform/soc/*.gpio/gpio'"
+    SUBSYSTEM=="gpio", KERNEL=="gpiochip*", ACTION=="add", PROGRAM="/bin/sh -c 'chown root:tty /sys/class/gpio/export /sys/class/gpio/unexport ; chmod 220 /sys/class/gpio/export /sys/class/gpio/unexport'"
+    SUBSYSTEM=="gpio", KERNEL=="gpio*", ACTION=="add", PROGRAM="/bin/sh -c 'chown root:tty /sys%p/active_low /sys%p/direction /sys%p/edge /sys%p/value ; chmod 660 /sys%p/active_low /sys%p/direction /sys%p/edge /sys%p/value'"
+
+
 ## See Also
 
 * [Raspberry Pi](https://www.raspberrypi.org/) - Official website

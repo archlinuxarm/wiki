@@ -3,7 +3,7 @@ This is the **official** cross-compiling method used at **Arch Linux ARM**. If y
 ## Introduction
 This guide makes use of *distcc* in order to not have to build a full ARM development environment on x86.
 
-*distcc* allow us to use network clients to spread the load of the compilation to slaves from a master. For example, an ARM master will send its compile jobs to *x86_64* clients.
+*distcc* allow us to use network clients to spread the load of the compilation to slaves from a master. For example, an ARM (distcc) master will send its compile jobs to *x86_64* (distccd) clients. The clients don't need to run *archlinux*.
 
 As the *distcc* project website states, "distcc does not require all machines to share a filesystem, have synchronized clocks, or to have the same libraries or header files installed." This is particularly advantageous to us since all that is needed is a working cross-compiler for ARM on a faster machine, while controlling the build from an ARM computer that has all of the current libraries and headers.
 

@@ -10,7 +10,7 @@ As the *distcc* project website states, "distcc does not require all machines to
 ## Distcc
 Before beginning, a *distcc* environment needs to be set up. Follow the [[Distributed Compiling]] guide to establish a master system. The x86 machines will be known as the clients.
 
-## Pre-built crosstool-ng toolchains
+## Pre-built crosstool-NG toolchains
 In lieu of building the toolchain as detailed below, if you are running a *64-bit* Linux installation you can use these packaged toolchains that are employed in the official build system.
 
 It is **highly recommended** to use these tarballs as they have been thoroughly tested, and are maintained to be version- and source-matched to the current toolchain components for our ARM architectures.  If you build the toolchain yourself, you must assemble patched source tarballs to build versions that match what is in use here.
@@ -30,8 +30,8 @@ For easier setup, one can use the relevant packages from [AUR](https://aur.archl
 
 They provide an easier way to setup the systemd services, and the possibility to run all 4 distccd toolchains in parallel (if needed).
 
-## Building a crosstool-ng toolchain
-This process is very automated, courtesy of [crosstool-ng](http://crosstool-ng.org). As a normal user (**not root!**), clone revision *ec384f2b* of the git repository into a directory called `cross` in your home directory. Enter the source directory and configure with a prefix for the `cross` directory, make, and make install.  If you are missing any pre-requisites, the configure script will let you know what they are.
+## Building a crosstool-NG toolchain
+This process is very automated, courtesy of [crosstool-NG](http://crosstool-ng.org). As a normal user (**not root!**), clone revision *ec384f2b* of the git repository into a directory called `cross` in your home directory. Enter the source directory and configure with a prefix for the `cross` directory, make, and make install.  If you are missing any pre-requisites, the configure script will let you know what they are.
 
 ```
 mkdir -p cross/src
@@ -45,7 +45,7 @@ make
 make install
 ```
 
-At this point crosstool-ng is ready to be configured. The program `ct-ng` in the `bin` directory is where the magic happens. It also has a menu configuration like the Linux kernel.
+At this point *crosstool-NG* is ready to be configured. The program `ct-ng` in the `bin` directory is where the magic happens. It also has a menu configuration like the Linux kernel.
 
 ### Downloading a CrossTool Configuration
 Download the default .config file to place in `~/cross/bin` as shown below. **Once you do this, do not run "menuconfig" or values will be overwritten**.  Choose either v5, v6, v7, or v8 depending on the target platform.

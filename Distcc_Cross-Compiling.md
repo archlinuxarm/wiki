@@ -20,6 +20,16 @@ It is **highly recommended** to use these tarballs as they have been thoroughly 
 * [ARMv7l hard-float](/builder/xtools/x-tools7h.tar.xz) (856aa3e81afda734deff8fb2848d5760)
 * [ARMv8](/builder/xtools/x-tools8.tar.xz) (56c435708efe81dcf0e668907219c3ed)
 
+### AUR packages
+For easier setup, one can use the relevant packages from [AUR](https://aur.archlinux.org). They just wrap up the above tarball into a package with included systemd services:
+
+* [ARMv5te soft-float](https://aur.archlinux.org/packages/distccd-alarm-armv5/)
+* [ARMv6l hard-float](https://aur.archlinux.org/packages/distccd-alarm-armv6h/)
+* [ARMv7l hard-float](https://aur.archlinux.org/packages/distccd-alarm-armv7h/)
+* [ARMv8](https://aur.archlinux.org/packages/distccd-alarm-armv8/)
+
+They provide an easier way to setup the systemd services, and the possibility to run all 4 distccd toolchains in parallel (if needed).
+
 ## Building a crosstool-ng toolchain
 This process is very automated, courtesy of [crosstool-ng](http://crosstool-ng.org). As a normal user (**not root!**), clone revision *ec384f2b* of the git repository into a directory called `cross` in your home directory. Enter the source directory and configure with a prefix for the `cross` directory, make, and make install.  If you are missing any pre-requisites, the configure script will let you know what they are.
 

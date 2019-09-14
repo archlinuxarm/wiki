@@ -1,12 +1,14 @@
+This is the **official** cross-compiling method used at **Arch Linux ARM**. If you plan on building a lot of packages and want to speed up the process, the following guide will turn an *x86* Linux computer into an ARM cross-compiler. It's also much easier than most cross-compile setups.
+
 ## Introduction
-*Disclaimer: This guide will appear vague and incomplete if you aren't sure what you're doing.  This is intentional.  This is specifically not designed for users new to software compilation and toolchain components.*
+This guide makes use of *distcc* in order to not have to build a full ARM development environment on x86.
 
-This is the official cross-compiling method used at Arch Linux ARM. If you plan on building a lot of packages and want to speed up the process, the following guide will turn an x86 Linux computer into an ARM cross-compiler. It's also much easier than most cross-compile setups.
+*distcc* allow us to use network clients to spread the load of the compilation to slaves from a master. For example, an ARM master will send its compile jobs to *x86_64* clients.
 
-This guide makes use of distcc in order to not have to build a full ARM development environment on x86. As the distcc project website states, "distcc does not require all machines to share a filesystem, have synchronized clocks, or to have the same libraries or header files installed." This is particularly advantageous to us since all that is needed is a working cross-compiler for ARM on a faster machine, while controlling the build from an ARM computer that has all of the current libraries and headers.
+As the *distcc* project website states, "distcc does not require all machines to share a filesystem, have synchronized clocks, or to have the same libraries or header files installed." This is particularly advantageous to us since all that is needed is a working cross-compiler for ARM on a faster machine, while controlling the build from an ARM computer that has all of the current libraries and headers.
 
 ## Distcc
-Before beginning, a distcc environment needs to be set up. Follow the [[Distributed Compiling]] guide to establish a master system. The x86 machines will be known as the clients.
+Before beginning, a *distcc* environment needs to be set up. Follow the [[Distributed Compiling]] guide to establish a master system. The x86 machines will be known as the clients.
 
 ## Pre-built crosstool-ng toolchains
 In lieu of building the toolchain as detailed below, if you are running a *64-bit* Linux installation you can use these packaged toolchains that are employed in the official build system.

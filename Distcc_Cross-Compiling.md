@@ -35,7 +35,7 @@ make install
 
 At this point crosstool-ng is ready to be configured. The program "ct-ng" in the "bin" directory is where the magic happens. It also has a menu configuration like the Linux kernel.
 
-## Downloading a CrossTool Configuration
+### Downloading a CrossTool Configuration
 Download the default .config file to place in "~/cross/bin" as shown below. <b>Once you do this, do not run "menuconfig" or values will be overwritten</b>.  Choose either v5, v6, v7, or v8 depending on the target platform.
 
 ```
@@ -43,14 +43,14 @@ cd /home/your_user/cross/bin
 wget http://archlinuxarm.org/builder/xtools/xtools-dotconfig-[v5|v6|v7|v8] -O .config
 ```
 
-## Build the cross-toolchain
+### Build the cross-toolchain
 
 ```
 cd /home/your_user/cross/bin
 ./ct-ng build
 ```
 
-## Make nice with distcc
+### Make nice with distcc
 The toolchain will install under "~/x-tools" for armv5, "~/x-tools6h" for armv6 hard-float, "~/x-tools7h" for armv7 hard-float, and "~/x-tools8" for AArch64.  You can move this somewhere else if you like, or leave it where it is. Before we can use the compiler binaries that were created, links need to be created to make their names more appropriate. When compile jobs are sent to distcc, the program specified in the CC environment variable on the build master is what gets executed on the build clients. All the binaries that have been produced by crosstool-ng are in the correct format specifying the target platform as a prefix, though not with the correct platform and lacking tuple-less variants. This script will fix our problem. Make "~/x-tools[6h|7h|8]/arm-unknown-linux-gnueabi[hf]/bin/" writable and in there create a file called "link" and paste the following into it. Uncomment for your target architecture and run it.
 
 ```bash

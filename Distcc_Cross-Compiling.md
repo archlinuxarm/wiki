@@ -19,7 +19,7 @@ It is *highly recommended* to use these tarballs as they have been thoroughly te
 * [ARMv8](/builder/xtools/x-tools8.tar.xz) (56c435708efe81dcf0e668907219c3ed)
 
 ## Building a crosstool-ng toolchain
-This process is very automated, courtesy of [crosstool-ng](http://crosstool-ng.org). As a normal user (<b>not root!</b>), clone revision ec384f2b of the git repository into a directory called "cross" in your home directory. Enter the source directory and configure with a prefix for the "cross" directory, make, and make install.  If you are missing any pre-requisites, the configure script will let you know what they are.
+This process is very automated, courtesy of [crosstool-ng](http://crosstool-ng.org). As a normal user (**not root!**), clone revision ec384f2b of the git repository into a directory called "cross" in your home directory. Enter the source directory and configure with a prefix for the "cross" directory, make, and make install.  If you are missing any pre-requisites, the configure script will let you know what they are.
 
 ```
 mkdir -p cross/src
@@ -36,7 +36,7 @@ make install
 At this point crosstool-ng is ready to be configured. The program "ct-ng" in the "bin" directory is where the magic happens. It also has a menu configuration like the Linux kernel.
 
 ### Downloading a CrossTool Configuration
-Download the default .config file to place in "~/cross/bin" as shown below. <b>Once you do this, do not run "menuconfig" or values will be overwritten</b>.  Choose either v5, v6, v7, or v8 depending on the target platform.
+Download the default .config file to place in "~/cross/bin" as shown below. **Once you do this, do not run "menuconfig" or values will be overwritten**.  Choose either v5, v6, v7, or v8 depending on the target platform.
 
 ```
 cd /home/your_user/cross/bin

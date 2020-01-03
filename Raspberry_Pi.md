@@ -143,6 +143,14 @@ Adding the following options removes this limitation, `/etc/modprobe.d/rpi-camer
 
     options bcm2835-v4l2 max_video_width=3240 max_video_height=2464
 
+## Userspace utilities on AArch64 kernel
+If you're running the AArch64 kernel, you won't be able to use the 32 bit utilities in
+the `raspberrypi-firmware` package. Instead you may want to build those in the
+[raspberrypi-userland-aarch64-git](https://aur.archlinux.org/packages/raspberrypi-userland-aarch64-git/)<sup>AUR</sup>
+package.
+
+You also need to make sure your user has r/w access to `/dev/vchiq`, or run them as root.
+
 ## Onboard Hardware Sensors
 ### Temperature
 Temperatures sensors can be queried with utils in the `raspberrypi-firmware` package.

@@ -87,20 +87,22 @@ which contains options for non-NTSC outputs.
 
 ## Camera
 The commands for the camera module are included as part of the raspberrypi-firmware package:
+
 ```
 $ /opt/vc/bin/raspistill
 $ /opt/vc/bin/raspivid
 ```
 
-Append to `/boot/config.txt`:
+According to the [boot options documentation](https://www.raspberrypi.org/documentation/configuration/config-txt/boot.md) `start_x=1` loads the relevant Videocore firmware for camera operation. Additionally more GPU memory is required for compressing the camera data according to [Raspberry Pi forum](https://www.raspberrypi.org/forums/viewtopic.php?t=234778#p1436166). Append to `/boot/config.txt`:
+
 ```
 gpu_mem=128
-start_file=start_x.elf
-fixup_file=fixup_x.dat
+start_x=1
 ```
-Optionally
 
-    disable_camera_led=1
+Optionally append the line `disable_camera_led=1` if you have RPi camera v1.
+
+After boot you should see `/dev/video0`, which will be used by camera applications and additional `/dev/video1*` devices, [which are memory to memory (M2M) devices for the video decoder, encoder, and ISP](https://www.raspberrypi.org/forums/viewtopic.php?f=43&t=62364&p=1527503#p1527508).
 
 The following is a common error:
 
@@ -112,6 +114,7 @@ mmal: Failed to run camera app. Please check for firmware updates
 ```
 
 which can be corrected by setting these values in `/boot/config.txt`:
+
 ```
 cma_lwm=
 cma_hwm=
@@ -119,6 +122,7 @@ cma_offline_start=
 ```
 
 Another common error:
+
 ```
 mmal: mmal_vc_component_create: failed to create component 'vc.ril.camera' (1:ENOMEM)
 mmal: mmal_component_create_core: could not create component 'vc.ril.camera' (1)
@@ -130,12 +134,6 @@ mmal: Only 64M of gpu_mem is configured. Try running "sudo raspi-config" and ens
 can be corrected by adding the following line to `/etc/modprobe.d/blacklist.conf`:
 
     blacklist i2c_bcm2708
-
-In order to use standard applications (those that look for `/dev/video0`) the
-V4L2 driver must be loaded. This can be done automatically at boot by creating
-an autoload file, `/etc/modules-load.d/rpi-camera.conf`:
-
-    bcm2835-v4l2
 
 The V4L2 driver by default only allows video recording up to 1280x720, else it
 glues together consecutive still screens resulting in videos of 4 fps or lower.

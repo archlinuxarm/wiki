@@ -21,6 +21,6 @@ Rules for pull requests:
 
 * Page file names must be named for the title of the page using only the permitted ASCII characters, with the file extension .mdx, and using proper capitalization.
     * Permitted characters: A-Z, a-z, 0-9, underscore, hyphen
-* Spaces must be comverted to underscores in the filename.
+* Spaces must be converted to underscores in the filename.
 * Page names, including the top header, are derived from the filename, and are rendered using the &lt;h1&gt; tag. Therefore, headers within the file must be second level (##) or lower.
 * Links to other wiki pages can be made by enclosing the page name (with proper capitalization) in double brackets, such as &#91;&#91;Contributing&#93;&#93;.

@@ -28,6 +28,7 @@ These are pages containing additional information for running Arch Linux ARM on 
         * [[ODROID-C2]]
     * Broadcom
         * [[Raspberry Pi 3]]
+        * [[Raspberry Pi 4]]
     * Mediatek
         * [[Acer Chromebook R13]]
     * Rockchip

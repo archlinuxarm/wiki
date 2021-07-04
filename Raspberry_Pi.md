@@ -166,14 +166,16 @@ Where `<id>` is:
 
 ### Watchdog
 BCM2708 has a hardware watchdog which can be utilized by enabling the
-`bcm2708_wdog` kernel module.  
+`bcm2708_wdog` kernel module, `bcm2709_wdog` for the Pi 2, or `bcm2835_wdt`
+for the Pi 3.  In most cases these modules will load automatically.
 
-For proper operation the watchdog daemon also has to be installed, configured
-(by uncommenting the "watchdog-device" line in `/etc/watchdog.conf`) and
-enabled.  
+To activate the watchdog, set the `RuntimeWatchdogSec` value in
+`/etc/systemd/system.conf`.  The largest permitted value is `15s` due to
+hardware limitations.
 
-This should also apply for Raspberry Pi 2 by using the `bcm2709_wdog` module
-and Raspberry Pi 3 by using the `bcm2835_wdt` module.
+The watchdog service is part of systemd, so no further configuration needs to
+be done.  `/etc/watchdog.conf` is no longer required as it was in the past, and
+separate `systemctl` steps to enable and activate the service no longer apply.
 
 ## Hardware Random Number Generator
 Arch Linux ARM for the Raspberry Pi had the `bcm2708-rng` module set to load at

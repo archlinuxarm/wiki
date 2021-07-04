@@ -260,6 +260,12 @@ To use the GPIO/SPI pins as a regular non-root user (in group `tty`), add the fo
     SUBSYSTEM=="gpio", KERNEL=="gpiochip*", ACTION=="add", PROGRAM="/bin/sh -c 'chown root:tty /sys/class/gpio/export /sys/class/gpio/unexport ; chmod 220 /sys/class/gpio/export /sys/class/gpio/unexport'"
     SUBSYSTEM=="gpio", KERNEL=="gpio*", ACTION=="add", PROGRAM="/bin/sh -c 'chown root:tty /sys%p/active_low /sys%p/direction /sys%p/edge /sys%p/value ; chmod 660 /sys%p/active_low /sys%p/direction /sys%p/edge /sys%p/value'"
 
+### Serial Console
+
+Adding `console=ttyAMA0,115200` to the kernel command line will enable it from
+the kernel's perspective.  On some models, the serial UART conflicts with the
+Bluetooth UART, so disabling Bluetooth with `dtoverlay=disable-bt` in
+`config.txt` may be required in order to get the serial console working.
 
 ## See Also
 

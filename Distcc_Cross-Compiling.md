@@ -13,8 +13,6 @@ In lieu of building the toolchain as detailed below, if you are running a 64-bit
 
 It is *highly recommended* to use these tarballs as they have been thoroughly tested, and are maintained to be version- and source-matched to the current toolchain components for our ARM architectures.  If you build the toolchain yourself, you must assemble patched source tarballs to build versions that match what is in use here.
 
-* [ARMv5te soft-float](/builder/xtools/x-tools.tar.xz) (87150475eb6e533f1a84ba3fc9a73e37)
-* [ARMv6l hard-float](/builder/xtools/x-tools6h.tar.xz) (9e1c82ac8badc286f40d7d22e475e1b2)
 * [ARMv7l hard-float](/builder/xtools/x-tools7h.tar.xz) (7015421efcdac437de27769a421a10a2)
 * [ARMv8](/builder/xtools/x-tools8.tar.xz) (6e5060bc78f9c62746e9d2b23668583b)
 
@@ -36,11 +34,11 @@ make install
 At this point crosstool-ng is ready to be configured. The program "ct-ng" in the "bin" directory is where the magic happens. It also has a menu configuration like the Linux kernel.
 
 ## Downloading a CrossTool Configuration
-Download the default .config file to place in "~/cross/bin" as shown below. <b>Once you do this, do not run "menuconfig" or values will be overwritten</b>.  Choose either v5, v6, v7, or v8 depending on the target platform.
+Download the default .config file to place in "~/cross/bin" as shown below. <b>Once you do this, do not run "menuconfig" or values will be overwritten</b>.  Choose either v7 or v8 depending on the target platform.
 
 ```
 cd /home/your_user/cross/bin
-wget http://archlinuxarm.org/builder/xtools/xtools-dotconfig-[v5|v6|v7|v8] -O .config
+wget http://archlinuxarm.org/builder/xtools/xtools-dotconfig-[v7|v8] -O .config
 ```
 
 ## Build the cross-toolchain
@@ -51,7 +49,7 @@ cd /home/your_user/cross/bin
 ```
 
 ## Make nice with distcc
-The toolchain will install under "~/x-tools" for armv5, "~/x-tools6h" for armv6 hard-float, "~/x-tools7h" for armv7 hard-float, and "~/x-tools8" for AArch64.  You can move this somewhere else if you like, or leave it where it is. Before we can use the compiler binaries that were created, links need to be created to make their names more appropriate. When compile jobs are sent to distcc, the program specified in the CC environment variable on the build master is what gets executed on the build clients. All the binaries that have been produced by crosstool-ng are in the correct format specifying the target platform as a prefix, though not with the correct platform and lacking tuple-less variants. This script will fix our problem. Make "~/x-tools[6h|7h|8]/arm-unknown-linux-gnueabi[hf]/bin/" writable and in there create a file called "link" and paste the following into it. Uncomment for your target architecture and run it.
+The toolchain will install under "~/x-tools7h" for armv7 hard-float and "~/x-tools8" for AArch64.  You can move this somewhere else if you like, or leave it where it is. Before we can use the compiler binaries that were created, links need to be created to make their names more appropriate. When compile jobs are sent to distcc, the program specified in the CC environment variable on the build master is what gets executed on the build clients. All the binaries that have been produced by crosstool-ng are in the correct format specifying the target platform as a prefix, though not with the correct platform and lacking tuple-less variants. This script will fix our problem. Make "~/x-tools[6h|7h|8]/arm-unknown-linux-gnueabi[hf]/bin/" writable and in there create a file called "link" and paste the following into it. Uncomment for your target architecture and run it.
 
 ```bash
 #!/bin/bash
@@ -59,12 +57,6 @@ for file in `ls`; do
         if [[ "$file" == "link" ]]; then
                 continue
         fi
-        # uncomment for v5
-        # ln -s $file ${file#arm-unknown-linux-gnueabi-}
-        # ln -s $file armv5tel-unknown-linux-gnueabi-${file#arm-unknown-linux-gnueabi-}
-        # uncomment for v6
-        # ln -s $file ${file#arm-unknown-linux-gnueabihf-}
-        # ln -s $file armv6l-unknown-linux-gnueabihf-${file#arm-unknown-linux-gnueabihf-}
         # uncomment for v7
         # ln -s $file ${file#arm-unknown-linux-gnueabihf-}
         # ln -s $file armv7l-unknown-linux-gnueabihf-${file#arm-unknown-linux-gnueabihf-}

@@ -13,8 +13,8 @@ In lieu of building the toolchain as detailed below, if you are running a 64-bit
 
 It is *highly recommended* to use these tarballs as they have been thoroughly tested, and are maintained to be version- and source-matched to the current toolchain components for our ARM architectures.  If you build the toolchain yourself, you must assemble patched source tarballs to build versions that match what is in use here.
 
-* [ARMv7l hard-float](/builder/xtools/x-tools7h.tar.xz) (41729908d9d95e9fba804627b4613a71)
-* [ARMv8](/builder/xtools/x-tools8.tar.xz) (bf79146bafeeedeb6e266cd712cdbf13)
+* [ARMv7l hard-float](/builder/xtools/x-tools7h.tar.xz) (18ae923647b6d543a8b2a446a07d910c)
+* [ARMv8](/builder/xtools/x-tools8.tar.xz) (368d04d810f15aa42d7cefe20ae910f7)
 
 ## Building a crosstool-ng toolchain
 This process is very automated, courtesy of [crosstool-ng](http://crosstool-ng.org). As a normal user (<b>not root!</b>), clone revision c206f2fc of the git repository into a directory called "cross" in your home directory. Enter the source directory and configure with a prefix for the "cross" directory, make, and make install.  If you are missing any pre-requisites, the configure script will let you know what they are.

@@ -204,7 +204,7 @@ would have been closer to 1000.
 ## I/O Pins
 ### GPIO
 To be able to use the GPIO pins from Python, use the RPi.GPIO library. 
-Install the [python-raspberry-gpio](https://aur.archlinux.org/packages/python-raspberry-gpio/) package
+Install the [python-rpi-gpio](https://aur.archlinux.org/packages/python-rpi-gpio/) package
 from the AUR.
 
 ### SPI

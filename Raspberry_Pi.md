@@ -1,3 +1,6 @@
+## Raspberry Pi kernels
+The aarch64 tarball comes with mainline kernel and u-boot. To use the kernel from Raspberry Pi install either `linux-rpi`  or `linux-rpi-16k` (CM5/Pi5 only). `linux-rpi` or `linux-rpi-16k` is mandatory to use on CM5/Pi5 and must be installed before booting.
+
 ## Audio
 `alsa-utils` should supply the needed programs to use onboard sound. Default
 volume can be adjusted using alsamixer.
@@ -47,12 +50,6 @@ This fix can be found in [this git commit](https://github.com/piCorePlayer/firmw
 ## Video
 The X.org driver for Raspberry Pi can be installed with the `xf86-video-fbdev` 
 or `xf86-video-fbturbo-git` package.
-
-### CPU/GPU RAM split
-Memory split between the CPU and GPU can be set in `boot/config.txt`
-by adjusting the parameter `gpu_mem` which stands for the amount of RAM in MB
-that is available to the GPU (minimum 16, default 64) and the rest is available
-to the ARM CPU.
 
 ### HDMI/Analogue TV-Out
 With the default configuration, the Raspberry Pi uses HDMI video if a HDMI

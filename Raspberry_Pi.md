@@ -1,5 +1,5 @@
 ## Raspberry Pi kernels
-The tarballs comes with mainline kernel and u-boot. To use the kernel from Raspberry PI install `linux-rpi` on the Pi 1 to 4 or `linux-rpi-16k` for the Pi5. 
+The aarch64 tarball comes with mainline kernel and u-boot. To use the kernel from Raspberry Pi install either `linux-rpi`  or `linux-rpi-16k` (CM5/Pi5 only). `linux-rpi` or `linux-rpi-16k` is mandatory to use on CM5/Pi5 and must be installed before booting.
 
 ## Audio
 `alsa-utils` should supply the needed programs to use onboard sound. Default

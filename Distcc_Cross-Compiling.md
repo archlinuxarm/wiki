@@ -13,18 +13,18 @@ In lieu of building the toolchain as detailed below, if you are running a 64-bit
 
 It is *highly recommended* to use these tarballs as they have been thoroughly tested, and are maintained to be version- and source-matched to the current toolchain components for our ARM architectures.  If you build the toolchain yourself, you must assemble patched source tarballs to build versions that match what is in use here.
 
-* [ARMv7l hard-float](/builder/xtools/x-tools7h.tar.xz) (3d9a5fd9cfc08b54d4250e3579c987f8)
-* [ARMv8](/builder/xtools/x-tools8.tar.xz) (f62d14e16e7dbea4379b4c1af9d2d108)
+* [ARMv7l hard-float](/builder/xtools/x-tools7h.tar.xz) (23e5fb168e40d32fa37b0af767077390)
+* [ARMv8](/builder/xtools/x-tools8.tar.xz) (0f1e226a0ad34c272803271c2277b165)
 
 ## Building a crosstool-ng toolchain
-This process is very automated, courtesy of [crosstool-ng](http://crosstool-ng.org). As a normal user (<b>not root!</b>), clone revision c8743eab of the git repository into a directory called "cross" in your home directory. Enter the source directory and configure with a prefix for the "cross" directory, make, and make install.  If you are missing any pre-requisites, the configure script will let you know what they are.
+This process is very automated, courtesy of [crosstool-ng](http://crosstool-ng.org). As a normal user (<b>not root!</b>), clone revision a3fef857 of the git repository into a directory called "cross" in your home directory. Enter the source directory and configure with a prefix for the "cross" directory, make, and make install.  If you are missing any pre-requisites, the configure script will let you know what they are.
 
 ```
 mkdir -p cross/src
 cd cross
 git clone https://github.com/crosstool-ng/crosstool-ng.git
 cd crosstool-ng
-git checkout c8743eab
+git checkout a3fef857
 ./bootstrap
 ./configure --prefix=/home/your_user/cross
 make

@@ -145,17 +145,17 @@ Adding the following options removes this limitation, `/etc/modprobe.d/rpi-camer
 
 ## Onboard Hardware Sensors
 ### Temperature
-Temperatures sensors can be queried with utils in the `raspberrypi-firmware` package.
+Temperatures sensors can be queried with utils in the `raspberrypi-utils` package.
 
 ```
-$ /opt/vc/bin/vcgencmd measure_temp
+$ vcgencmd measure_temp
 temp=49.8'C
 ```
 
 ### Voltage
-Four different voltages can be monitored via `/opt/vc/bin/vcgencmd`:
+Four different voltages can be monitored via `vcgencmd`:
 
-    $ /opt/vc/bin/vcgencmd measure_volts <id>
+    $ vcgencmd measure_volts <id>
 
 Where `<id>` is:
 

@@ -30,6 +30,7 @@ These are pages containing additional information for running Arch Linux ARM on 
         * [[Raspberry Pi 3]]
     * Mediatek
         * [[Acer Chromebook R13]]
+        * [[Lenovo Chromebook 300e]]
     * Rockchip
         * [[Asus Chromebook Flip C101PA]]
         * [[Rock64]]

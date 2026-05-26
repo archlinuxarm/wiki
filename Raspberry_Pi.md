@@ -265,4 +265,5 @@ To use the GPIO/SPI pins as a regular non-root user (in group `tty`), add the fo
 * [RPi Config](http://elinux.org/RPiconfig) - Excellent source of info relating to under-the-hood tweaks.
 * [RPi vcgencmd usage](http://elinux.org/RPI_vcgencmd_usage) - Overview of firmware command vcgencmd.
 * [Arch Linux ARM on Raspberry Pi](http://archpi.dabase.com/) - A FAQ style site with hints and tips for running Arch Linux on the RPi
+* [Prepare a headless Raspberry Pi 3 with Arch Linux ARM to connect to WiFi](https://blog.stigok.com/2019/09/02/prepare-headless-pi-3-arch-linux-arm-wifi.html) - How to configure wireless connection before even booting the image
 
